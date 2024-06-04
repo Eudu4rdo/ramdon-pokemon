@@ -1,0 +1,30 @@
+{
+    "name":"eudu4rdo/random-pokemon",
+    "description": "Random pokemon generator",
+    "type": "library",
+    "keywords": ["random","pokemon"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eduardo Garcia",
+            "email": "eduardogarcia79@live.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Eudu4rdo\\RandomPokemon\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.34"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
