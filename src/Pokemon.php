@@ -17,13 +17,18 @@ class Pokemon
         return rand(1, self::TOTAL_POKEMON);
     }
 
-    public function getPokemon(int $id = null): array
+    public function getPokemon($identifier = null): array
     {
-        if(is_null($id)) {
-            $id = $this->randomizeId();
+        if(is_null($identifier)) {
+            $identifier = $this->randomizeId();
         }
-        $response = $this->client->get(self::BASE_ENDPOINT.$id)->getBody()->getContents();
+        $response = $this->client->get(self::BASE_ENDPOINT.$identifier)->getBody()->getContents();
         return json_decode($response, true);
     }
 
+    public function getAllPokemons()
+    {
+        $response = $this->client->get(self::BASE_ENDPOINT.'?limit='.self::TOTAL_POKEMON)->getBody()->getContents();
+        return json_decode($response, true);
+    }
 }
