@@ -2,7 +2,7 @@
 
 use Eudu4rdo\RandomPokemon\Pokemon;
 
-it('should return a ramdon pokemon', function(){
+it('should return a random pokemon', function(){
     $fakeClient = getResponseCliente();
 
     $PokemonClass = new Pokemon($fakeClient);
